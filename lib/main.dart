@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_firestore_stream/widget/pages/chat_room/chat_room_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    // 위젯에서 프로바이더를 사용하고 읽기위해
+    // 앱 전체적으로 "ProviderScope" 위젯을 감싸줘야 합니다.
+    // 여기에 프로바이더의 상태가 저장됩니다.
+    ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
