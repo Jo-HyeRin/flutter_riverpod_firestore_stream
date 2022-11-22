@@ -5,7 +5,7 @@ class ChatInsertReqDto{
   String to;
   String msg;
 
-  ChatInsertReqDto(this.from, this.to, this.msg);
+  ChatInsertReqDto({required this.from, required this.to, required this.msg});
 
   // dart -> map (toJson)
   Map<String, dynamic> toJson() => {
@@ -15,7 +15,11 @@ class ChatInsertReqDto{
   };
 
   // map -> dart (fromJson)
-  factory ChatInsertReqDto.fromJson(Map<String, dynamic> json) => ChatInsertReqDto(json["from"], json["to"], json["msg"]);
+  factory ChatInsertReqDto.fromJson(Map<String, dynamic> json) => ChatInsertReqDto(
+    from: json["from"],
+    to: json["to"],
+    msg: json["msg"],
+  );
 
 }
 
