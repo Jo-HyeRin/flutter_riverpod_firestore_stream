@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_firestore_stream/core/route_enum.dart';
 import 'package:riverpod_firestore_stream/domain/chat/chat_firestore_repository.dart';
 import 'package:riverpod_firestore_stream/dto/chat/chat_req_dto.dart';
 
@@ -13,6 +12,7 @@ class ChatController {
   Ref _ref;
   ChatController(this._ref);
 
+  // insert
   void insert(ChatInsertReqDto dto) async {
     Future<DocumentReference> futureDoc = _ref.read(chatFirestoreRepositoryProvider).insert(dto);
     //print("디버그: ${futureDoc.snapshots()}");
@@ -34,5 +34,4 @@ class ChatController {
         },
     );
   }
-
 }
