@@ -11,7 +11,7 @@ class ChatFirestoreRepository {
   final db = FirebaseFirestore.instance;
 
   // db에 insert
-  Future<DocumentReference> insert(ChatInsertReqDto dto){
+  Future<DocumentReference> insert(ChatInsertReqDto dto) {
     return db.collection("chat").add(dto.toJson());
   }
 }
