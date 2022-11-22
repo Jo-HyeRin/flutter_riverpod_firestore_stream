@@ -1,4 +1,7 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Provider 필요
+final chatController = Provider((ref){
+  return ChatController();
+});
 
 class ChatController {}
